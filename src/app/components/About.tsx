@@ -12,22 +12,18 @@ function About() {
           </p>
           <h2 className="py-4">Who I Am</h2>
           <p className="py-2 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa
-            aspernatur repudiandae aliquam esse laboriosam inventore mollitia
-            quibusdam, vero accusamus et libero laborum cupiditate odio! Odio
-            quas aliquid voluptas enim? Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Ex, fugit nam. Doloribus necessitatibus nostrum,
-            amet quisquam sed assumenda numquam tenetur, impedit quo, maxime
-            illo rerum pariatur quibusdam magnam obcaecati praesentium.
+            I specialize in building responsive front-end UI applications
+            that connect with API’s and other backend technologies. I’m
+            passionate about learning new technologies and understand there is
+            more than one way to accomplish a task. Though I am most proficient
+            in building front-end applications using Javascript, Typescript,
+            React.js and Next.js I am a quick learner and can pick up new tech stacks as
+            needed. I believe that being a great developer is not using one
+            specific language, but choosing the best tool for the job.
           </p>
           <p className="py-2 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa
-            aspernatur repudiandae aliquam esse laboriosam inventore mollitia
-            quibusdam, vero accusamus et libero laborum cupiditate odio! Odio
-            quas aliquid voluptas enim? Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Ex, fugit nam. Doloribus necessitatibus nostrum,
-            amet quisquam sed assumenda numquam tenetur, impedit quo, maxime
-            illo rerum pariatur quibusdam magnam obcaecati praesentium.
+            I started web developement in 2021 learning languages such as Javascript, Typescript for the front-end And Java, Python and also algorithms and data-structure for the back-end. Creating multiple projects using Javascript, Typescript, React.js, Next.js, Node.js, Python, Java and APIs. I have experience working directly with companies and taking
+            mock wireframes all the way to deployed applications.
           </p>
           <Link href="/#projects">
             <p className="py-2 text-gray-600 underline cursor-pointer">
