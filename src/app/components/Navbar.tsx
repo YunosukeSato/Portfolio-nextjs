@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { useState } from "react";
+
+import NavImg from "../../../public/assets/Y.png";
 
 function Navbar() {
   const [nav, setNav] = useState<boolean>(false);
@@ -17,25 +18,33 @@ function Navbar() {
   return (
     <div className="fixed w-full h-20 shadow-xl z-[100]">
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-        <Image src="/assets/navLogo.png" alt="/" width="125" height="50" />
+        <Link href="/">
+          <Image src={NavImg} alt="/" width="125" height="50" />
+        </Link>
         <div>
           <ul className="hidden md:flex">
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-[#5651e5]">
+                Home
+              </li>
             </Link>
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">About</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-[#5651e5]">
+                About
+              </li>
             </Link>
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-[#5651e5]">
+                Skills
+              </li>
             </Link>
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-[#5651e5]">
                 Projects
               </li>
             </Link>
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-[#5651e5]">
                 Contact
               </li>
             </Link>
@@ -46,7 +55,9 @@ function Navbar() {
         </div>
       </div>
       <div
-        className={nav ? `md:hidden fixed left-0 top-0 w-full h-screen bg-black/70` : ""}
+        className={
+          nav ? `md:hidden fixed left-0 top-0 w-full h-screen bg-black/70` : ""
+        }
       >
         <div
           className={
