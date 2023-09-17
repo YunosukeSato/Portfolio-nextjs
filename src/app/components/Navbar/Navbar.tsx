@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import NavImg from "../../../../public/assets/Y.png";
 import Button from "./Button";
@@ -14,18 +14,59 @@ const buttons = ["home", "about", "skills", "projects", "contact"];
 
 function Navbar() {
   const [nav, setNav] = useState<boolean>(false);
+  const [shadow, setShadow] = useState(false);
+  const [navBg, setNavBg] = useState("#ecf0f3");
+  const [linkColor, setLinkColor] = useState("#1f2937");
+
+  // const [position, setPosition] = useState('fixed')
+  // const router = useRouter();
+
+  // useEffect(() => {
+  //   if (
+  //     router.asPath === '/property' ||
+  //     router.asPath === '/crypto' ||
+  //     router.asPath === '/netflix' ||
+  //     router.asPath === '/twitch'
+  //   ) {
+  //     setNavBg('transparent');
+  //     setLinkColor('#ecf0f3');
+  //   } else {
+  //     setNavBg('#ecf0f3');
+  //     setLinkColor('#1f2937');
+  //   }
+  // }, [router]);
 
   const handleNav = () => {
     setNav(!nav);
   };
+
+  useEffect(() => {
+    // Set the shadow when the user scrolls
+    const handleShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  }, []);
+
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100]">
+    <div
+      style={{ backgroundColor: `${navBg}` }}
+      className={
+        shadow
+          ? "fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300"
+          : "fixed w-full h-20 z-[100]"
+      }
+    >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/#home">
           <Image src={NavImg} alt="/" width="125" height="50" />
         </Link>
         <div>
-          <ul className="hidden md:flex">
+          <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
             {buttons.map((button) => (
               <Button key={button} name={button} mode="pc" />
             ))}
@@ -65,9 +106,9 @@ function Navbar() {
           </div>
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
-            {buttons.map((button) => (
-              <Button key={button} name={button} mode="mobile" />
-            ))}
+              {buttons.map((button) => (
+                <Button key={button} name={button} mode="mobile" />
+              ))}
             </ul>
             <div className="pt-40">
               <p className="uppercase tracking-widest text-[#5651e5]">
