@@ -1,7 +1,6 @@
 import Technologies from "@/app/components/DetailPage/Technologies";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import Navbar from "../NavBar/Navbar";
 
 type PropType = {
   img: StaticImageData;
@@ -14,7 +13,6 @@ type PropType = {
 function DetailPage({ img, name, technologies, description, url }: PropType) {
   return (
     <>
-    <Navbar />
     <div className="w-full">
       <div className="w-screen h-[50vh] relative">
         <div className="absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10" />
