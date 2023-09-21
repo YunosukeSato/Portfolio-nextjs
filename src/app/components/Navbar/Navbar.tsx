@@ -2,7 +2,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
@@ -11,7 +11,9 @@ import { useState, useEffect } from "react";
 import NavImg from "../../../../public/assets/Y.png";
 import Button from "./Button";
 
-const buttons = ["home", "about", "skills", "projects", "contact"];
+const buttons = ["home", "about", "skills", "projects"];
+// add contact section later
+// const buttons = ["home", "about", "skills", "projects", "contact"];
 
 function Navbar() {
   const [nav, setNav] = useState<boolean>(false);
@@ -19,7 +21,6 @@ function Navbar() {
   const [navBg, setNavBg] = useState("#ecf0f3");
   const [linkColor, setLinkColor] = useState("#1f2937");
 
-  // const router = useRouter();
   const router = usePathname();
 
   useEffect(() => {
@@ -31,11 +32,6 @@ function Navbar() {
       router === "/calculator" ||
       router === "/teddy" ||
       router === "/daily_blog"
-      // router.asPath === "/translator" ||
-      // router.asPath === "/eldenring_lp" ||
-      // router.asPath === "/calculator" ||
-      // router.asPath === "/teddy" ||
-      // router.asPath === "/daily_blog"
     ) {
       setNavBg("transparent");
       setLinkColor("#ecf0f3");
