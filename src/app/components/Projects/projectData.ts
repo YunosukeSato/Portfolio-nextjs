@@ -1,5 +1,6 @@
 import Translator from "../../../../public/assets/projects/Translator.png"
 import EldenRing from "../../../../public/assets/projects/EldenRing.png"
+import Calculator from "../../../../public/assets/projects/Calculator.png"
 import TeddyEC from "../../../../public/assets/projects/TeddyEC.png"
 import DailyBlog from "../../../../public/assets/projects/DailyBlog.png"
 
@@ -7,25 +8,31 @@ export const projects = [
   {
     title: "ChatGPT Translator",
     backgroundImg: Translator,
-    projectUrl: "https://react-translator-five.vercel.app/",
+    projectUrl: "/translator",
     tech: "React TS ChatGPT"
   },
   {
     title: "Elden Ring LP",
     backgroundImg: EldenRing,
-    projectUrl: "https://elden-ring-blond.vercel.app/",
+    projectUrl: "/eldenring_lp",
     tech: "HTML SCSS JS"
+  },
+  {
+    title: "Simple Calculator",
+    backgroundImg: Calculator,
+    projectUrl: "/calculator",
+    tech: "React JS Tailwind"
   },
   {
     title: "Teddy EC",
     backgroundImg: TeddyEC,
-    projectUrl: "/",
+    projectUrl: "/teddy",
     tech: "Next TS Strapi"
   },
   {
     title: "Daily Blog",
     backgroundImg: DailyBlog,
-    projectUrl: "/",
+    projectUrl: "/daily_blog",
     tech: "React Node JS MongoDB"
   },
 ]
