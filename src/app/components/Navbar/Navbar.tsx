@@ -2,6 +2,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation"
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
@@ -18,23 +19,31 @@ function Navbar() {
   const [navBg, setNavBg] = useState("#ecf0f3");
   const [linkColor, setLinkColor] = useState("#1f2937");
 
-  // const [position, setPosition] = useState('fixed')
   // const router = useRouter();
+  const router = usePathname();
 
-  // useEffect(() => {
-  //   if (
-  //     router.asPath === '/property' ||
-  //     router.asPath === '/crypto' ||
-  //     router.asPath === '/netflix' ||
-  //     router.asPath === '/twitch'
-  //   ) {
-  //     setNavBg('transparent');
-  //     setLinkColor('#ecf0f3');
-  //   } else {
-  //     setNavBg('#ecf0f3');
-  //     setLinkColor('#1f2937');
-  //   }
-  // }, [router]);
+  useEffect(() => {
+    console.log(router);
+    
+    if (
+      router === "/translator" ||
+      router === "/eldenring_lp" ||
+      router === "/calculator" ||
+      router === "/teddy" ||
+      router === "/daily_blog"
+      // router.asPath === "/translator" ||
+      // router.asPath === "/eldenring_lp" ||
+      // router.asPath === "/calculator" ||
+      // router.asPath === "/teddy" ||
+      // router.asPath === "/daily_blog"
+    ) {
+      setNavBg("transparent");
+      setLinkColor("#ecf0f3");
+    } else {
+      setNavBg("#ecf0f3");
+      setLinkColor("#1f2937");
+    }
+  }, [router]);
 
   const handleNav = () => {
     setNav(!nav);
@@ -63,7 +72,7 @@ function Navbar() {
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/#home">
-          <Image src={NavImg} alt="/" width="125" height="50" />
+          <Image src={NavImg} alt="/" width="125" height="50" style={{width: "auto", height: "auto"}} />
         </Link>
         <div>
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
@@ -71,16 +80,25 @@ function Navbar() {
               <Button key={button} name={button} mode="pc" />
             ))}
           </ul>
-          <div onClick={handleNav} className="md:hidden">
+          {/* Hamburger Icon */}
+          <div
+            style={{ color: `${linkColor}` }}
+            onClick={handleNav}
+            className="md:hidden"
+          >
             <AiOutlineMenu size={25} />
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {/* Overlay */}
       <div
         className={
           nav ? `md:hidden fixed left-0 top-0 w-full h-screen bg-black/70` : ""
         }
       >
+        {/* Side Drawer Menu */}
         <div
           className={
             nav
