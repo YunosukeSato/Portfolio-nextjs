@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import Icon from "./Icon";
 import { icons } from "./icons";
 
