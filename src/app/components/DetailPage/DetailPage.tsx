@@ -1,6 +1,7 @@
 import Technologies from "@/app/components/DetailPage/Technologies";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import Navbar from "../NavBar/Navbar";
 
 type PropType = {
   img: StaticImageData;
@@ -12,16 +13,19 @@ type PropType = {
 
 function DetailPage({ img, name, technologies, description, url }: PropType) {
   return (
+    <>
+    <Navbar />
     <div className="w-full">
       <div className="w-screen h-[50vh] relative">
         <div className="absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10" />
         <Image
+          priority
           className="absolute z-1"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           src={img}
           alt="/"
-        />
+          />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
           <h2 className="py-2">{name}</h2>
           <h3>
@@ -45,7 +49,7 @@ function DetailPage({ img, name, technologies, description, url }: PropType) {
             <div className="grid grid-cols-3 md:grid-cols-1">
               {technologies.map((tech) => (
                 <Technologies key={tech} name={tech} />
-              ))}
+                ))}
             </div>
           </div>
         </div>
@@ -54,6 +58,7 @@ function DetailPage({ img, name, technologies, description, url }: PropType) {
         </Link>
       </div>
     </div>
+                </>
   );
 }
 
