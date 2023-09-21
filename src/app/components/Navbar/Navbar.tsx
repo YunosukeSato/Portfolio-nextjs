@@ -2,7 +2,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation"
+import { usePathname } from "next/navigation";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
@@ -15,7 +15,7 @@ const buttons = ["home", "about", "skills", "projects"];
 // add contact section later
 // const buttons = ["home", "about", "skills", "projects", "contact"];
 
-function Navbar() {
+function NavBar() {
   const [nav, setNav] = useState<boolean>(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState("#ecf0f3");
@@ -25,7 +25,7 @@ function Navbar() {
 
   useEffect(() => {
     console.log(router);
-    
+
     if (
       router === "/translator" ||
       router === "/eldenring_lp" ||
@@ -68,7 +68,13 @@ function Navbar() {
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/#home">
-          <Image src={NavImg} alt="/" width="125" height="50" style={{width: "auto", height: "auto"}} />
+          <Image
+            src={NavImg}
+            alt="/"
+            width="125"
+            height="50"
+            style={{ width: "auto", height: "auto" }}
+          />
         </Link>
         <div>
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
@@ -150,4 +156,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;
