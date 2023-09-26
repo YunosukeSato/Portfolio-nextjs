@@ -24,15 +24,15 @@ export const projects = [
     tech: "React JS Tailwind"
   },
   {
-    title: "Teddy EC",
-    backgroundImg: TeddyEC,
-    projectUrl: "/teddy",
-    tech: "Next TS Strapi"
-  },
-  {
     title: "Daily Blog",
     backgroundImg: DailyBlog,
     projectUrl: "/daily_blog",
     tech: "React Node JS MongoDB"
+  },
+  {
+    title: "Teddy EC",
+    backgroundImg: TeddyEC,
+    projectUrl: "/teddy",
+    tech: "Next TS Strapi"
   },
 ]
